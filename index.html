@@ -85,8 +85,8 @@
     <div class="container">
         <h1>Three-Phase Power Factor Calculator</h1>
 
-        <label for="voltage">Line-to-Line Voltage (V):</label>
-        <input type="number" id="voltage" placeholder="Enter voltage in volts">
+        <label for="voltage">Line-to-Line Voltage (kV):</label>
+        <input type="number" id="voltage" placeholder="Enter voltage in kilovolts">
 
         <label for="current">Current (A):</label>
         <input type="number" id="current" placeholder="Enter current in amperes">
@@ -105,7 +105,7 @@
 
     <script>
         function calculatePowerFactor() {
-            const voltage = parseFloat(document.getElementById('voltage').value);
+            const voltage = parseFloat(document.getElementById('voltage').value) * 1000; // Convert kV to V
             const current = parseFloat(document.getElementById('current').value);
             const power = parseFloat(document.getElementById('power').value);
 
