@@ -3,10 +3,126 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome to My Homepage</title>
+    <title>Power Factor Calculator</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        ..container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="number"] {
+            width: calc(100% - 22px); /* Adjust for padding and border */
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e6f7ff;
+            border: 1px solid #b3e0ff;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #777;
+        }
+
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Homepage</h1>
-    <p>This is the homepage for my GitHub Pages site.</p>
+
+    <div class="container">
+        <h1>Power Factor Calculator</h1>
+        <label for="realPower">Real Power (kW):</label>
+        <input type="number" id="realPower" placeholder="Enter real power in kilowatts">
+
+        <label for="apparentPower">Apparent Power (kVA):</label>
+        <input type="number" id="apparentPower" placeholder="Enter apparent power in kilovolt-amperes">
+
+        <button onclick="calculatePowerFactor()">Calculate Power Factor</button>
+
+        <div id="result"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Power Factor Calculator</p>
+    </footer>
+
+    <script>
+        function calculatePowerFactor() {
+            const realPower = parseFloat(document.getElementById('realPower').value);
+            const apparentPower = parseFloat(document.getElementById('apparentPower').value);
+
+            if (isNaN(realPower) || isNaN(apparentPower)) {
+                document.getElementById('result').textContent = "Please enter valid numbers.";
+                return;
+            }
+
+            if (apparentPower === 0){
+                document.getElementById('result').textContent = "Apparent Power cannot be zero.";
+                return;
+            }
+
+            const powerFactor = realPower / apparentPower;
+
+            if(powerFactor > 1){
+              document.getElementById('result').textContent = "Error: Real Power cannot be greater than Apparent Power.";
+            } else{
+              document.getElementById('result').textContent = "Power Factor: " + powerFactor.toFixed(2);
+            }
+        }
+    </script>
+
 </body>
 </html>
