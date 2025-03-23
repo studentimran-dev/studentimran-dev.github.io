@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Power Factor Calculator</title>
+    <title>Three-Phase Power Factor Calculator</title>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -17,7 +17,7 @@
             color: #333;
         }
 
-        ..container {
+        .container {
             background-color: #fff;
             padding: 30px;
             border-radius: 8px;
@@ -39,7 +39,7 @@
         }
 
         input[type="number"] {
-            width: calc(100% - 22px); /* Adjust for padding and border */
+            width: calc(100% - 22px);
             padding: 10px;
             margin-bottom: 15px;
             border: 1px solid #ddd;
@@ -83,12 +83,16 @@
 <body>
 
     <div class="container">
-        <h1>Power Factor Calculator</h1>
-        <label for="realPower">Real Power (kW):</label>
-        <input type="number" id="realPower" placeholder="Enter real power in kilowatts">
+        <h1>Three-Phase Power Factor Calculator</h1>
 
-        <label for="apparentPower">Apparent Power (kVA):</label>
-        <input type="number" id="apparentPower" placeholder="Enter apparent power in kilovolt-amperes">
+        <label for="voltage">Line-to-Line Voltage (V):</label>
+        <input type="number" id="voltage" placeholder="Enter voltage in volts">
+
+        <label for="current">Current (A):</label>
+        <input type="number" id="current" placeholder="Enter current in amperes">
+
+        <label for="power">Real Power (kW):</label>
+        <input type="number" id="power" placeholder="Enter real power in kilowatts">
 
         <button onclick="calculatePowerFactor()">Calculate Power Factor</button>
 
@@ -96,30 +100,32 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 Power Factor Calculator</p>
+        <p>&copy; 2024 Three-Phase Power Factor Calculator</p>
     </footer>
 
     <script>
         function calculatePowerFactor() {
-            const realPower = parseFloat(document.getElementById('realPower').value);
-            const apparentPower = parseFloat(document.getElementById('apparentPower').value);
+            const voltage = parseFloat(document.getElementById('voltage').value);
+            const current = parseFloat(document.getElementById('current').value);
+            const power = parseFloat(document.getElementById('power').value);
 
-            if (isNaN(realPower) || isNaN(apparentPower)) {
+            if (isNaN(voltage) || isNaN(current) || isNaN(power)) {
                 document.getElementById('result').textContent = "Please enter valid numbers.";
                 return;
             }
 
-            if (apparentPower === 0){
-                document.getElementById('result').textContent = "Apparent Power cannot be zero.";
+            if (voltage === 0 || current === 0) {
+                document.getElementById('result').textContent = "Voltage and Current cannot be zero.";
                 return;
             }
 
-            const powerFactor = realPower / apparentPower;
+            const apparentPower = Math.sqrt(3) * voltage * current / 1000; // kVA
+            const powerFactor = power / apparentPower;
 
-            if(powerFactor > 1){
-              document.getElementById('result').textContent = "Error: Real Power cannot be greater than Apparent Power.";
-            } else{
-              document.getElementById('result').textContent = "Power Factor: " + powerFactor.toFixed(2);
+            if (powerFactor > 1) {
+                document.getElementById('result').textContent = "Error: Real Power cannot be greater than Apparent Power.";
+            } else {
+                document.getElementById('result').textContent = "Power Factor: " + powerFactor.toFixed(2);
             }
         }
     </script>
