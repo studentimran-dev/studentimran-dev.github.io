@@ -3,13 +3,12 @@
 <head>
 <style>
     .relay-settings {
-        width: 50%; /* Changed from 100% to 50% */
-        margin: 20px auto; /* Centers the table */
+        width: 50%;
+        margin: 20px auto;
         border-collapse: collapse;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 14px;
         box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        margin: 20px 0;
     }
     .relay-settings th {
         background-color: #2c3e50;
@@ -56,18 +55,11 @@
         </tr>
     </thead>
     <tbody>
-        <!-- Identifier Labels -->
         <tr><td class="param-code">RID</td><td>Relay Identifier</td><td class="setting-value">MEPCO</td><td class="range-info">—</td></tr>
         <tr><td class="param-code">TID</td><td>Terminal Identifier</td><td class="setting-value">O/G Panel</td><td class="range-info">—</td></tr>
-
-        <!-- Current Transformer Ratios -->
         <tr><td class="param-code">CTR</td><td>Phase CT Ratio</td><td class="setting-value">80</td><td class="range-info">1, 6000</td></tr>
         <tr><td class="param-code">CTRN</td><td>Neutral CT Ratio</td><td class="setting-value">80</td><td class="range-info">1, 6000</td></tr>
-
-        <!-- Trip Duration -->
         <tr><td class="param-code">TOURD</td><td>Min Trip Duration</td><td class="setting-value">10</td><td class="range-info">0-8000 cyc</td></tr>
-
-        <!-- Phase Instantaneous OC -->
         <tr><td class="param-code">50P1P</td><td>Phase Inst. Pickup 1</td><td class="setting-value">15</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50P2P</td><td>Phase Inst. Pickup 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50P3P</td><td>Phase Inst. Pickup 3</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
@@ -75,8 +67,6 @@
         <tr><td class="param-code">50P5P</td><td>Phase Inst. Pickup 5</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50P6P</td><td>Phase Inst. Pickup 6</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50ABCP</td><td>Single Phase Pickup</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
-
-        <!-- Phase Time-OC -->
         <tr><td class="param-code">51P1P</td><td>Phase Time Pickup 1</td><td class="setting-value">5</td><td class="range-info">OFF, 0.5-16A</td></tr>
         <tr><td class="param-code">51P1C</td><td>Time Curve 1</td><td class="setting-value">C1</td><td class="range-info">U1-U5, C1-C5</td></tr>
         <tr><td class="param-code">51P1TD</td><td>Time Dial 1</td><td class="setting-value">0.05</td><td class="range-info">0.05-1.00</td></tr>
@@ -85,24 +75,18 @@
         <tr><td class="param-code">51P2C</td><td>Time Curve 2</td><td class="setting-value">C1</td><td class="range-info">U1-U5, C1-C5</td></tr>
         <tr><td class="param-code">51P2TD</td><td>Time Dial 2</td><td class="setting-value">0.05</td><td class="range-info">0.05-1.00</td></tr>
         <tr><td class="param-code">51P2RS</td><td>EM Reset 2</td><td class="setting-value">N</td><td class="range-info">N/Y</td></tr>
-
-        <!-- Neutral OC Elements -->
         <tr><td class="param-code">50N1P</td><td>Neutral Inst. Pickup 1</td><td class="setting-value">15</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50N2P</td><td>Neutral Inst. Pickup 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">51N1P</td><td>Neutral Time Pickup</td><td class="setting-value">0.5</td><td class="range-info">OFF, 0.5-16A</td></tr>
         <tr><td class="param-code">51N1C</td><td>Neutral Time Curve</td><td class="setting-value">C1</td><td class="range-info">U1-U5, C1-C5</td></tr>
         <tr><td class="param-code">51N1TD</td><td>Neutral Time Dial</td><td class="setting-value">0.05</td><td class="range-info">0.05-1.00</td></tr>
         <tr><td class="param-code">51N1RS</td><td>Neutral EM Reset</td><td class="setting-value">N</td><td class="range-info">N/Y</td></tr>
-
-        <!-- Residual Ground OC -->
         <tr><td class="param-code">50G1P</td><td>Residual Inst. Pickup 1</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50G2P</td><td>Residual Inst. Pickup 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">51G1P</td><td>Residual Time Pickup</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-16A</td></tr>
         <tr><td class="param-code">51G1C</td><td>Residual Time Curve</td><td class="setting-value">U3</td><td class="range-info">U1-U5, C1-C5</td></tr>
         <tr><td class="param-code">51G1TD</td><td>Residual Time Dial</td><td class="setting-value">1.5</td><td class="range-info">0.50-15.00</td></tr>
         <tr><td class="param-code">51G1RS</td><td>Residual EM Reset</td><td class="setting-value">N</td><td class="range-info">N/Y</td></tr>
-
-        <!-- Negative Sequence OC -->
         <tr><td class="param-code">50Q1P</td><td>Neg Seq. Inst. Pickup 1</td><td class="setting-value">1.2</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">50Q2P</td><td>Neg Seq. Inst. Pickup 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td></tr>
         <tr><td class="param-code">5101P</td><td>Neg Seq. Time Pickup 1</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-16A</td></tr>
@@ -113,8 +97,6 @@
         <tr><td class="param-code">5102C</td><td>Neg Seq. Time Curve 2</td><td class="setting-value">U3</td><td class="range-info">U1-U5, C1-C5</td></tr>
         <tr><td class="param-code">5102TD</td><td>Neg Seq. Time Dial 2</td><td class="setting-value">15</td><td class="range-info">0.50-15.00</td></tr>
         <tr><td class="param-code">5102RS</td><td>Neg Seq. EM Reset 2</td><td class="setting-value">N</td><td class="range-info">N/Y</td></tr>
-
-        <!-- Reclosing Timers -->
         <tr><td class="param-code">7901</td><td>Open Interval 1</td><td class="setting-value">30</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">7902</td><td>Open Interval 2</td><td class="setting-value">600</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">7903</td><td>Open Interval 3</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
@@ -122,22 +104,31 @@
         <tr><td class="param-code">798D</td><td>Reset from Reclose</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">798SD</td><td>Reset from Lockout</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">CFD</td><td>Close Failure Time</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
-
-        <!-- Demand Settings -->
         <tr><td class="param-code">DMTC</td><td>Demand Time Constant</td><td class="setting-value">5</td><td class="range-info">5,10,15,30,60</td></tr>
         <tr><td class="param-code">PDEMP</td><td>Phase Demand Pickup</td><td class="setting-value">5</td><td class="range-info">OFF, 0.50-16A</td></tr>
         <tr><td class="param-code">NDEMP</td><td>Neutral Demand Pickup</td><td class="setting-value">1.5</td><td class="range-info">OFF, 0.50-16A</td></tr>
         <tr><td class="param-code">GDEMP</td><td>Residual Demand Pickup</td><td class="setting-value">1.5</td><td class="range-info">OFF, 0.50-16A</td></tr>
         <tr><td class="param-code">QDEMP</td><td>Neg Seq Demand Pickup</td><td class="setting-value">1.5</td><td class="range-info">OFF, 0.50-16A</td></tr>
-
-        <!-- SELogic Timers -->
         <tr><td class="param-code">SVSPU</td><td>SV Timer Pickup 1</td><td class="setting-value">2</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">SVSDO</td><td>SV Timer Dropout 1</td><td class="setting-value">2</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">SVGPU</td><td>SV Timer Pickup 2</td><td class="setting-value">50</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">SVGDO</td><td>SV Timer Dropout 2</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
-        <!-- ... (All remaining SV timers follow same pattern) ... -->
-
-        <!-- System Parameters -->
+        <tr><td class="param-code">SV7PU</td><td>SV Timer Pickup 7</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV7DO</td><td>SV Timer Dropout 7</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV8PU</td><td>SV Timer Pickup 8</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV8DO</td><td>SV Timer Dropout 8</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV9PU</td><td>SV Timer Pickup 9</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV9DO</td><td>SV Timer Dropout 9</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV10PU</td><td>SV Timer Pickup 10</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV10DO</td><td>SV Timer Dropout 10</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV11PU</td><td>SV Timer Pickup 11</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV11DO</td><td>SV Timer Dropout 11</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV12PU</td><td>SV Timer Pickup 12</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV12DO</td><td>SV Timer Dropout 12</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV13PU</td><td>SV Timer Pickup 13</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV13DO</td><td>SV Timer Dropout 13</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV14PU</td><td>SV Timer Pickup 14</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
+        <tr><td class="param-code">SV14DO</td><td>SV Timer Dropout 14</td><td class="setting-value">0</td><td class="range-info">0-54000 cyc</td></tr>
         <tr><td class="param-code">NFREQ</td><td>System Frequency</td><td class="setting-value">50</td><td class="range-info">50/60</td></tr>
         <tr><td class="param-code">PHROT</td><td>Phase Rotation</td><td class="setting-value">ABC</td><td class="range-info">ABC/ACB</td></tr>
         <tr><td class="param-code">DATE_F</td><td>Date Format</td><td class="setting-value">MDY</td><td class="range-info">MDY/YMD</td></tr>
