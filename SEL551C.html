@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEL-551C Relay Settings</title>
+    <title>SEL-551C Relay Settings | Protective Relay Settings</title>
+    <meta name="description" content="Detailed settings table for the SEL-551C protective relay, including phase and neutral overcurrent, reclosing, and metering settings.  Essential reference for power system protection engineers.">
+    <meta name="keywords" content="SEL-551C, relay settings, protective relay, overcurrent protection, reclosing, power system protection, CT ratio, time curve, SEL relay">
     <style>
         .relay-settings {
             width: 70%;
@@ -64,6 +66,22 @@
             font-weight: bold;
             color: #e74c3c;
         }
+        .disclaimer {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 20px;
+            padding: 10px;
+            border-top: 1px solid #ddd;
+            text-align: center;
+        }
+        . زیبا {
+            background-color: #f0f0f0;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
     <script>
         function calculateCTRatio(selectElement, settingValueId) {
@@ -97,6 +115,10 @@
     </script>
 </head>
 <body>
+    <header>
+        <h1 style="text-align: center;">SEL-551C Protective Relay Settings</h1>
+        <p style="text-align: center; font-size: 0.9em; color: #666;">Comprehensive configuration data for the SEL-551C relay.</p>
+    </header>
 
 <table class="relay-settings">
     <thead>
@@ -224,5 +246,8 @@
         <tr><td class="param-code">SVGPO</td><td>SV Output Select 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, INST, TD1, TD2</td><td></td></tr>
     </tbody>
 </table>
+<footer class="disclaimer زیبا">
+    <p>Disclaimer: This table provides a summary of typical SEL-551C relay settings.  Actual settings should always be determined by a qualified protection engineer, taking into account specific system requirements and coordination studies. Refer to the official SEL-551C instruction manual for complete and up-to-date information.</p>
+</footer>
 </body>
 </html>
