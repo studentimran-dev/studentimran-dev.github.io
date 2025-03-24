@@ -175,20 +175,7 @@
         <tr><td class="param-code">50N1P</td><td>Neutral Inst. Pickup 1</td><td class="setting-value">15</td><td class="range-info">OFF, 0.5-80A</td><td>Instantaneous neutral overcurrent pickup level 1.</td></tr>
         <tr><td class="param-code">50N2P</td><td>Neutral Inst. Pickup 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, 0.5-80A</td><td>Instantaneous neutral overcurrent pickup level 2.</td></tr>
         <tr><td class="param-code">51N1P</td><td>Neutral Time Pickup</td><td class="setting-value">0.5</td><td class="range-info">OFF, 0.5-16A</td><td>Time-delayed neutral overcurrent pickup.</td></tr>
-        <tr><td class="param-code">51N1C</td><td>Neutral Time Curve</td><td class="setting-value">C1</td><td class="range-info">U1-U5, C1-C5</td><td>
-                <select class="ct-dropdown" onchange="calculateCTRatio(this, '51n1c-setting')">
-                    <option value="400/5">400/5 CT</option>
-                    <option value="600/5">600/5 CT</option>
-                    <option value="800/5">800/5 CT</option>
-                    <option value="1000/5">1000/5 CT</option>
-                    <option value="1200/5">1200/5 CT</option>
-                    <option value="50/1">50/1 CT</option>
-                    <option value="100/1">100/1 CT</option>
-                    <option value="150/1">150/1 CT</option>
-                    <option value="200/1">200/1 CT</option>
-                    <option value="300/1">300/1 CT</option>
-                </select>
-            </td></tr>
+        <tr><td class="param-code">51N1C</td><td>Neutral Time Curve</td><td class="setting-value">C1</td><td class="range-info">U1-U5, C1-C5</td><td>Manufacturer-specific inverse time curve. See SEL-551C manual.</td></tr>
         <tr><td class="param-code">51N1TD</td><td>Neutral Time Dial</td><td class="setting-value">0.05</td><td class="range-info">0.05-1.00</td><td>Time dial setting for the selected time curve.</td></tr>
         <tr><td class="param-code">51N1RS</td><td>Neutral EM Reset</td><td class="setting-value">N</td><td class="range-info">N/Y</td><td>Enables/disables electromagnetic reset.</td></tr>
 
@@ -231,4 +218,11 @@
         <tr class="group-header"><th colspan="5">Supervisory Timers</th></tr>
         <tr><td class="param-code">SVSPU</td><td>SV Timer Pickup 1</td><td class="setting-value">2</td><td class="range-info">0-54000 cyc</td><td>Pickup time for Supervisory Timer 1.</td></tr>
         <tr><td class="param-code">SVSDO</td><td>SV Timer Dropout 1</td><td class="setting-value">2</td><td class="range-info">0-54000 cyc</td><td>Dropout time for Supervisory Timer 1.</td></tr>
-        <tr><td class="param-code">SVGPU</td><td>SV Timer Pickup 2</td><td class="setting-valu
+        <tr><td class="param-code">SVGPU</td><td>SV Timer Pickup 2</td><td class="setting-value>5</td><td class="range-info">0-54000 cyc</td><td>Pickup time for Supervisory Timer 2.</td></tr>
+        <tr><td class="param-code">SVGDO</td><td>SV Timer Dropout 2</td><td class="setting-value">5</td><td class="range-info">0-54000 cyc</td><td>Dropout time for Supervisory Timer 2.</td></tr>
+        <tr><td class="param-code">SVSPO</td><td>SV Output Select 1</td><td class="setting-value">OFF</td><td class="range-info">OFF, INST, TD1, TD2</td><td></td></tr>
+        <tr><td class="param-code">SVGPO</td><td>SV Output Select 2</td><td class="setting-value">OFF</td><td class="range-info">OFF, INST, TD1, TD2</td><td></td></tr>
+    </tbody>
+</table>
+</body>
+</html>
