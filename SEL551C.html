@@ -6,7 +6,7 @@
     <title>SEL-551C Relay Settings</title>
     <style>
         .relay-settings {
-            width: 90%;
+            width: 70%;
             margin: 20px auto;
             border-collapse: collapse;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -78,6 +78,8 @@
                 settingValueElement.textContent = '160';
             } else if (selectedRatio === '1000/5') {
                 settingValueElement.textContent = '200';
+            } else if (selectedRatio === '1200/5') {
+                settingValueElement.textContent = '240';
             } else if (selectedRatio === '50/1') {
                 settingValueElement.textContent = '50';
             } else if (selectedRatio === '100/1') {
@@ -88,22 +90,7 @@
                 settingValueElement.textContent = '200';
              }else if (selectedRatio === '300/1') {
                 settingValueElement.textContent = '300';
-            } else if (selectedRatio === '400/1') {
-                settingValueElement.textContent = '400';
-            }else if (selectedRatio === '500/1') {
-                settingValueElement.textContent = '500';
-            }else if (selectedRatio === '600/1') {
-                settingValueElement.textContent = '600';
-            } else if (selectedRatio === '800/1') {
-                settingValueElement.textContent = '800';
-            } else if (selectedRatio === '1000/1') {
-                settingValueElement.textContent = '1000';
-            } else if (selectedRatio === '1200/1') {
-                settingValueElement.textContent = '1200';
-            } else if (selectedRatio === '1500/1') {
-                settingValueElement.textContent = '1500';
-            }
-            else {
+            } else {
                 settingValueElement.textContent = 'N/A';
             }
         }
@@ -136,18 +123,12 @@
                     <option value="600/5">600/5 CT</option>
                     <option value="800/5">800/5 CT</option>
                     <option value="1000/5">1000/5 CT</option>
+                    <option value="1200/5">1200/5 CT</option>
                     <option value="50/1">50/1 CT</option>
                     <option value="100/1">100/1 CT</option>
                     <option value="150/1">150/1 CT</option>
                     <option value="200/1">200/1 CT</option>
                     <option value="300/1">300/1 CT</option>
-                    <option value="400/1">400/1 CT</option>
-                    <option value="500/1">500/1 CT</option>
-                    <option value="600/1">600/1 CT</option>
-                    <option value="800/1">800/1 CT</option>
-                    <option value="1000/1">1000/1 CT</option>
-                    <option value="1200/1">1200/1 CT</option>
-                    <option value="1500/1">1500/1 CT</option>
                 </select>
             </td>
         </tr>
@@ -162,18 +143,12 @@
                     <option value="600/5">600/5 CT</option>
                     <option value="800/5">800/5 CT</option>
                     <option value="1000/5">1000/5 CT</option>
+                    <option value="1200/5">1200/5 CT</option>
                      <option value="50/1">50/1 CT</option>
                     <option value="100/1">100/1 CT</option>
                     <option value="150/1">150/1 CT</option>
                     <option value="200/1">200/1 CT</option>
                     <option value="300/1">300/1 CT</option>
-                    <option value="400/1">400/1 CT</option>
-                    <option value="500/1">500/1 CT</option>
-                    <option value="600/1">600/1 CT</option>
-                    <option value="800/1">800/1 CT</option>
-                    <option value="1000/1">1000/1 CT</option>
-                    <option value="1200/1">1200/1 CT</option>
-                    <option value="1500/1">1500/1 CT</option>
                 </select>
             </td>
         </tr>
@@ -206,18 +181,12 @@
                     <option value="600/5">600/5 CT</option>
                     <option value="800/5">800/5 CT</option>
                     <option value="1000/5">1000/5 CT</option>
+                    <option value="1200/5">1200/5 CT</option>
                     <option value="50/1">50/1 CT</option>
                     <option value="100/1">100/1 CT</option>
                     <option value="150/1">150/1 CT</option>
                     <option value="200/1">200/1 CT</option>
                     <option value="300/1">300/1 CT</option>
-                    <option value="400/1">400/1 CT</option>
-                    <option value="500/1">500/1 CT</option>
-                    <option value="600/1">600/1 CT</option>
-                    <option value="800/1">800/1 CT</option>
-                    <option value="1000/1">1000/1 CT</option>
-                    <option value="1200/1">1200/1 CT</option>
-                    <option value="1500/1">1500/1 CT</option>
                 </select>
             </td></tr>
         <tr><td class="param-code">51N1TD</td><td>Neutral Time Dial</td><td class="setting-value">0.05</td><td class="range-info">0.05-1.00</td><td>Time dial setting for the selected time curve.</td></tr>
@@ -262,4 +231,4 @@
         <tr class="group-header"><th colspan="5">Supervisory Timers</th></tr>
         <tr><td class="param-code">SVSPU</td><td>SV Timer Pickup 1</td><td class="setting-value">2</td><td class="range-info">0-54000 cyc</td><td>Pickup time for Supervisory Timer 1.</td></tr>
         <tr><td class="param-code">SVSDO</td><td>SV Timer Dropout 1</td><td class="setting-value">2</td><td class="range-info">0-54000 cyc</td><td>Dropout time for Supervisory Timer 1.</td></tr>
-        <tr><td class="param-code">SVGPU</td><
+        <tr><td class="param-code">SVGPU</td><td>SV Timer Pickup 2</td><td class="setting-valu
