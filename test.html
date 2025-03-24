@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Test Page</title>
+    <style>
+        .setting-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .setting-table th, .setting-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .setting-header {
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    </style>
 </head>
 <body>
-    <h1>This is a test page!</h1>
-    <p>This page is to verify that my custom domain and GitHub Pages are working correctly.</p>
+    <h2>SEL-551C Relay Settings</h2>
+    <table class="setting-table">
+        <thead>
+            <tr class="setting-header">
+                <th>Parameter</th>
+                <th>Description</th>
+                <th>Setting</th>
+                <th>Range/Options</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Identifier Labels -->
+            <tr><td>RID</td><td>Relay Identifier (12 Chars)</td><td>MEPCO</td><td>—</td></tr>
+            <tr><td>TID</td><td>Terminal Identifier (12 Chars)</td><td>O/G Panel</td><td>—</td></tr>
+            
+            <!-- Current Transformer Ratios -->
+            <tr><td>CTR</td><td>Phase (IA, IB, IC) CT Ratio</td><td>80</td><td>1, 6000</td></tr>
+            <tr><td>CTRN</td><td>Neutral (IN) CT Ratio</td><td>80</td><td>1, 6000</td></tr>
+            
+            <!-- Timers -->
+            <tr><td>TOURD</td><td>Min. Trip Duration Time</td><td>10</td><td>0, 8000 cyc</td></tr>
+            
+            <!-- Phase Overcurrent Settings -->
+            <tr><td>50P1P</td><td>Phase Inst. Pickup</td><td>15</td><td>OFF, 0.5 - 80 A</td></tr>
+            <tr><td>50P2P</td><td>Phase Inst. Pickup</td><td>OFF</td><td>OFF, 0.5 - 80 A</td></tr>
+            <!-- ... (Include all 50P3P to 50P6P similarly) ... -->
+            
+            <!-- Time-Overcurrent Elements -->
+            <tr><td>51P1P</td><td>Phase Time-Overcurrent Pickup</td><td>5</td><td>OFF, 0.5 - 16.0 A</td></tr>
+            <tr><td>51P1C</td><td>Phase Time-Overcurrent Curve</td><td>C1</td><td>U1-U5, C1-C5</td></tr>
+            <!-- ... (Include all remaining parameters similarly) ... -->
+            
+            <!-- Example of Neutral/Residual Settings -->
+            <tr><td>50N1P</td><td>Neutral Grid. Inst. Pickup</td><td>15</td><td>OFF, 0.5 - 80.0 A</td></tr>
+            <tr><td>51N1P</td><td>Neutral Grid. Time-Overcurrent Pickup</td><td>0.5</td><td>OFF, 0.5 - 16.0 A</td></tr>
+            
+            <!-- Reclosing Timers -->
+            <tr><td>7901</td><td>Open Interval 1 Timer</td><td>30</td><td>0 - 54000 cyc</td></tr>
+            <tr><td>7902</td><td>Open Interval 2 Timer</td><td>600</td><td>0 - 54000 cyc</td></tr>
+            
+            <!-- System Parameters -->
+            <tr><td>NFREQ</td><td>Nominal Frequency</td><td>50</td><td>50, 60</td></tr>
+            <tr><td>PHROT</td><td>Phase Rotation</td><td>ABC</td><td>ABC, ACB</td></tr>
+        </tbody>
+    </table>
 </body>
 </html>
